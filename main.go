@@ -31,8 +31,6 @@ func homeHandler(writer http.ResponseWriter, request *http.Request) {
 
 	artistNames := make([]string, len(artistsData))
 
-	fmt.Println(artistsData)
-
 	for i, artist := range artistsData {
 		artistNames[i] = artist.Name
 	}
