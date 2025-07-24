@@ -38,10 +38,6 @@ func Artists() ([]Artist, error) {
 		log.Fatal("Error unmarshling JSON: ", err)
 	}
 
-	// for _, artist := range artists {
-	// 	fmt.Println(artist.Members)
-	// }
-
 	return artists, nil
 }
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <title>Browse</title>
+</head>
+<body>
+    <h1>Home</h1>
+    {{range .}}
+    <div class="hero-container">
+        <img class="hero-image" src="{{.Image}}" alt="{{.Name}} album cover">
+        <p>{{.Name}}</p>
+    </div>
+    {{end}}
+</body>
+</html>

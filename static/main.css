@@ -1,4 +1,13 @@
+:root {
+    --accent-colour: rgb(38, 227, 224);
+}
+
 body {
     background-color: black;
-    color: rgb(32, 204, 204)
+    color: white;
+}
+
+.hero-image {
+    width: 400px;
+    box-shadow: 10px 5px 5px var(--accent-colour);
 }
