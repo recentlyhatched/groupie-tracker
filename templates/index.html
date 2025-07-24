@@ -8,7 +8,8 @@
 <body>
     <h1>Home</h1>
     {{range .}}
-    <p>{{.}}</p>
+    <p>{{.Name}}</p>
+    <img src="{{.Image}}" alt="{{.Name}} album cover">
     {{end}}
 </body>
 </html>
