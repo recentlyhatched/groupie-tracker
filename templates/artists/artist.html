@@ -7,10 +7,18 @@
     <title>{{.Name}}</title>
 </head>
 <body>
-    <img class="album-cover" src="{{.Image}}" alt="{{.Name}} album cover">
-    <p>{{.Name}}</p>
-    {{range .Members}}
-    <li>{{.}}</li>
-    {{end}}
+    <div class="flex-container">
+        <div class="hero-container">
+            <img class="album-cover" src="{{.Image}}" alt="{{.Name}} album cover">
+            <p>{{.Name}}</p>
+        </div>
+        <div class="members-container">
+            <ul>
+                {{range .Members}}
+                <li class="member">{{.}}</li>
+                {{end}}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
