@@ -10,8 +10,8 @@
     <h1>Browse</h1>
     {{range .}}
     <div class="hero-container">
-        <img class="hero-image" src="{{.Image}}" alt="{{.Name}} album cover">
-        <p>{{.Name}}</p>
+        <img class="album-cover" src="{{.Image}}" alt="{{.Name}} album cover">
+        <p><a href="/artists/{{.Name}}">{{.Name}}</a></p>
     </div>
     {{end}}
 </body>

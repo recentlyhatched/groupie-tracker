@@ -7,7 +7,7 @@ body {
     color: white;
 }
 
-.hero-image {
+.album-cover {
     width: 400px;
     box-shadow: 10px 5px 5px var(--accent-colour);
 }
