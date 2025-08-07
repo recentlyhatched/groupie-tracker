@@ -1,14 +1,45 @@
 @import "main.css";
 
-.flex-container {
-    display: flex;
+h1 {
+    text-align: center;
+}
 
+.center {
+    margin: auto;
+}
+
+.flex-container {
+    margin: 0 auto;
+    display: flex;
+    max-width: 850px;
     /* responsive */
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.member {
+.section {
+    width: 400px;
+    /* border-color: rgb(30, 10, 97);
+    border-width: 5px;
+    border-style: solid; */
+    margin: auto;
+}
+
+.section:not(:first-child) > * {
+    padding-left: 50px;
+}
+
+.member, .more-info {
     list-style-type: none;
     font-size: 20px;
+}
+
+.album-cover {
+    box-shadow: 10px 5px 5px var(--accent-colour);
+    border-radius: 25px;;
+}
+
+.section:not(:first-child) {
+    box-shadow: 10px 5px 5px var(--accent-colour);
+    border-radius: 25px;
 }

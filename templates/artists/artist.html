@@ -7,16 +7,25 @@
     <title>{{.Name}}</title>
 </head>
 <body>
+    <h1>{{.Name}}</h1>
     <div class="flex-container">
-        <div class="hero-container">
+        <div class="section">
             <img class="album-cover" src="{{.Image}}" alt="{{.Name}} album cover">
-            <p>{{.Name}}</p>
         </div>
-        <div class="members-container">
+        <div class="section">
+            <p class="subtitles">Members</p>
             <ul>
                 {{range .Members}}
                 <li class="member">{{.}}</li>
                 {{end}}
+            </ul>
+        </div>
+        <div class="section">
+            <p class="subtitles">More Info</p>
+            <ul>
+                <li class="more-info">Creation Date: {{.CreationDate}}</li>
+                <li class="more-info">First Album: {{.FirstAlbum}}</li>
+                <li class="more-info"><a href="{{.Relations}}">Relations</a></li>
             </ul>
         </div>
     </div>
