@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"strings"
 )
@@ -59,10 +60,31 @@ func artistHandler(writer http.ResponseWriter, request *http.Request) {
 	// find artist using name
 	for _, artist := range artistsData {
 		if artist.Name == name {
-			template.Execute(writer, artist)
+			relation, err := GetRelation(artist.Relations)
+			if err != nil {
+				http.Error(writer, "Trouble loading relation", http.StatusInternalServerError)
+				return
+			}
+
+			data := ArtistPageData{
+				Artist:   artist,
+				Relation: relation,
+			}
+
+			log.Printf("Relation data for %s: %+v\n", artist.Name, relation)
+			log.Printf("DatesLocations length: %d\n", len(relation.DatesLocations))
+
+			if err := template.Execute(writer, data); err != nil {
+				http.Error(writer, "Template execution error: "+err.Error(), http.StatusInternalServerError)
+			}
 			return
 		}
 	}
 
 	http.NotFound(writer, request)
+}
+
+type ArtistPageData struct {
+	Artist   Artist
+	Relation Relation
 }

@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/artist.css">
-    <title>{{.Name}}</title>
+    <title>{{.Artist.Name}}</title>
 </head>
 <body>
-    <h1>{{.Name}}</h1>
+    <h1>{{.Artist.Name}}</h1>
     <div class="flex-container">
         <div class="section">
-            <img class="album-cover" src="{{.Image}}" alt="{{.Name}} album cover">
+            <img class="album-cover" src="{{.Artist.Image}}" alt="{{.Artist.Name}} album cover">
         </div>
         <div class="section">
-            <p class="subtitles">Members</p>
+            <h2 class="subtitles">Members</h2>
             <ul>
-                {{range .Members}}
+                {{range .Artist.Members}}
                 <li class="member">{{.}}</li>
                 {{end}}
             </ul>
         </div>
         <div class="section">
-            <p class="subtitles">More Info</p>
+            <h2 class="subtitles">More Info</h2>
             <ul>
-                <li class="more-info">Creation Date: {{.CreationDate}}</li>
-                <li class="more-info">First Album: {{.FirstAlbum}}</li>
-                <li class="more-info"><a href="{{.Relations}}">Relations</a></li>
+                <li class="more-info">Creation Date: {{.Artist.CreationDate}}</li>
+                <li class="more-info">First Album: {{.Artist.FirstAlbum}}</li>
             </ul>
+        </div>
+        <div class="section">
+            <h2 class="subtitles">Tour Dates</h2>
+            {{range $location, $dates := .Relation.DatesLocations}}
+            <h3>{{$location}}</h3>
+            <ul>
+                {{range $dates}}
+                    <li>{{.}}</li>
+                {{end}}
+            </ul>
+            {{end}}
         </div>
     </div>
 </body>
