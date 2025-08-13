@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="menu-container">
+        <p>Home</p>
+        <p>Browse</p>
+    </div>
+    <h1>Groupie Tracker</h1>
+    <form action="/" method="GET" id="form">
+        <label for="year-input"></label>
+        <input type="number" placeholder="Enter year" name="year-input" id="year-input">
+        <input type="submit" value="Find" id="sumbit-button">
+    </form>
+    <ul>
+        {{if .}}
+            {{range .}}
+            <li><a href="/artists/{{.Name}}">{{.Name}}</a></li>
+            {{end}}
+        {{else}}
+            <p>No artist found yet</p>
+        {{end}}
+    </ul>
+</body>
+</html>
