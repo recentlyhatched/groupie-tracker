@@ -56,6 +56,7 @@ func browseHandler(writer http.ResponseWriter, request *http.Request) {
 	artistsData, err := Artists()
 	if err != nil {
 		http.Error(writer, "Trouble loading artists", http.StatusInternalServerError)
+		return
 	}
 
 	template.Execute(writer, artistsData)

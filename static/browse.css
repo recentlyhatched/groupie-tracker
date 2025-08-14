@@ -1,5 +1,9 @@
 @import "main.css";
 
+h1 {
+    text-align: center;
+}
+
 img, .artist-name {
     display:block;
     margin: auto;
