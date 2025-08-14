@@ -1,12 +1,22 @@
 :root {
     --accent-colour: rgb(38, 227, 224);
+    --primary-color: white;
 }
 
 body {
     background-color: black;
-    color: white;
+    color: var(--primary-color);
 }
 
 .album-cover {
     width: 400px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: var(--primary-color);
 }

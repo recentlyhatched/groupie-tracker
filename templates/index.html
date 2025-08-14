@@ -8,23 +8,24 @@
 </head>
 <body>
     <div class="menu-container">
-        <p>Home</p>
-        <p>Browse</p>
+        <p><a href="./">Home</a></p>
+        <p><a href="./browse">Browse</a></p>
     </div>
-    <h1>Groupie Tracker</h1>
+    <h1 class="center">Groupie Tracker</h1>
     <form action="/" method="GET" id="form">
         <label for="year-input"></label>
-        <input type="number" placeholder="Enter year" name="year-input" id="year-input">
+        <input type="number" placeholder="Enter year" name="year-input" id="year-input" class="center">
         <input type="submit" value="Find" id="sumbit-button">
     </form>
-    <ul>
         {{if .}}
-            {{range .}}
-            <li><a href="/artists/{{.Name}}">{{.Name}}</a></li>
-            {{end}}
+            <ul></ul>
+                {{range .}}
+                    <li class="center"><a href="/artists/{{.Name}}">{{.Name}}</a></li>
+                {{end}}
+            </ul>
         {{else}}
-            <p>No artist found yet</p>
+            <p class="center">Try 1970!</p>
         {{end}}
-    </ul>
+   
 </body>
 </html>
